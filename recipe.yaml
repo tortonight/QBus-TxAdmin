@@ -1,0 +1,36 @@
+name: QBus Framework
+author: tortonight
+description: QBus Framework - Without Assets (MLO and Vehicles).
+
+tasks:
+  - action: download_github
+    src: https://github.com/tortonight/QBus-TxAdmin
+    dest: ./temp/
+
+  - action: move_path
+    src: ./temp/resources
+    dest: ./resources
+    overwrite: true
+
+  - action: move_path
+    src: ./temp/server.cfg
+    dest: ./server.cfg
+    overwrite: true
+
+  - action: move_path
+    src: ./temp/logo.png
+    dest: ./logo.png
+    overwrite: true
+  
+  - action: connect_database
+
+  - action: query_database
+    file: ./temp/sql.sql
+
+  - action: replace_string
+    mode: all_vars
+    file: 
+      - ./resources/[standalone]/ghmattimysql/config.json
+
+  - action: remove_path
+    path: ./temp
