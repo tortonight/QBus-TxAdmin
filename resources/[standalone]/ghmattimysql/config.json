@@ -1,7 +1,7 @@
 {
-    "user": "tonight",
-    "password": "pZuLAtA8cUR4",
-    "host": "172.17.0.1",
+    "user": "{{dbUsername}}",
+    "password": "{{dbPassword}}",
+    "host": "{{dbHost}}",
     "port": 3306,
-    "database": "qbus"
+    "database": "{{dbName}}"
 }
